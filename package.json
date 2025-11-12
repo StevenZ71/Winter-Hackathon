@@ -1,0 +1,27 @@
+{
+  "name": "winter-hackathon",
+  "version": "1.0.0",
+  "description": "<h1>Collaborators: Steven Zhu, Vincent Zhang, Ivan Ng, Zhao Zhang</h1>\r <b>Please create a branch before working on the project, when you're done, make a pull request</b>\r <ul>\r <h2>Starting a new branch</h2>\r   <li>git checkout master</li>\r   <li><strong>git pull (<- IMPORTANT, pulls all changes from master)</strong></li>\r   <li>git checkout -b \"(branch name)\" (takes the code that you pulled to main and brings it to a seperate branch)</li>\r <h2>Only when you're done working on your branch</h2>\r   <li>git add *</li>\r   <li>git commit -m \"...\"</li>\r   <li>git push --set-upstream origin &lt;branch_name&gt;</li>\r   <li>Once you finish, make a pull request and allow Zhao to verify and resolve any merge conflicts</li>\r <h2>Conventions</h2>\r     <li>Name functions using camelCase (First letter is lowercase, first letter of every word after taht is capitalized)</li>\r     <li>Name classes and constructors using PascalCase (First letter of every word is capitialized)</li>\r     <li>We should name branches in the format feature/{feature-name} or bugfix/{bug-name}</li>\r </ul>\r <h1>website is temporarily hosted on vercel</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenZ71/Winter-Hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenZ71/Winter-Hackathon/issues"
+  },
+  "homepage": "https://github.com/StevenZ71/Winter-Hackathon#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

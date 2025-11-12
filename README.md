@@ -1,5 +1,5 @@
 <h1>Collaborators: Steven Zhu, Vincent Zhang, Ivan Ng, Zhao Zhang</h1>
-## Please create a branch before working on the project, when you're done, make a pull request
+<b>Please create a branch before working on the project, when you're done, make a pull request</b>
 <ul>
 <h2>Starting a new branch</h2>
   <li>git checkout master</li>
@@ -13,6 +13,7 @@
 <h2>Conventions</h2>
     <li>Name functions using camelCase (First letter is lowercase, first letter of every word after taht is capitalized)</li>
     <li>Name classes and constructors using PascalCase (First letter of every word is capitialized)</li>
+    <li>We should name branches in the format feature/{feature-name} or bugfix/{bug-name}</li>
 </ul>
 <h1>website is temporarily hosted on vercel</h1>
 

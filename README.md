@@ -1,4 +1,4 @@
-<h1>Collaborators: Steven Zhu</h1>
+<h1>Collaborators: Steven Zhu, Vincent Zhang</h1>
 ## Please create a branch before working on the project, when you're done, make a pull request
 <ul>
 <h2>Starting a new branch</h2>

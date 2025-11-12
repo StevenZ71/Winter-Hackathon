@@ -10,7 +10,8 @@
   <li>git push --set-upstream origin &lt;branch_name&gt;</li>
   <li>Once you finish, make a pull request and allow Zhao to verify and resolve any merge conflicts</li>
 <h2>Conventions</h2>
-  <li>Name functions using PascalCasing when using react (First letter of every word is capitialized)</li>
+    <li>Name functions using camelCase (First letter is lowercase, first letter of every word after taht is capitalized)</li>
+    <li>Name classes and constructors using PascalCase (First letter of every word is capitialized)</li>
 </ul>
 <h1>website is temporarily hosted on vercel</h1>
 

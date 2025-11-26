@@ -3,8 +3,9 @@ import NavBar from '../containers/NavBar/NavBar'
 export default function Homepage(){
     return (
     <>
-        <div className='h-screen w-lvw bg-[url(../../../vite.svg)] bg-contain bg-no-repeat bg-center'>{/*Background/Introductory picture*/}
-            <div className='flex flex-col justify-center h-screen'>
+        <NavBar></NavBar>
+        <div className='h-[95vh] w-screen bg-[url(../../../vite.svg)] bg-contain bg-no-repeat bg-center'>{/*Background/Introductory picture*/}
+            <div className='flex flex-col justify-center h-[95vh]'>
                 <div className='m-[2vh]'>
                     <a href='/battle'>Battle</a>
                 </div>
@@ -16,7 +17,6 @@ export default function Homepage(){
                 </div>
             </div>
         </div>
-        <NavBar></NavBar>
     </>
     )
 }

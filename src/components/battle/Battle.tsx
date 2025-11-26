@@ -5,7 +5,7 @@ export default function Battle(){
     return (
     <>
         <NavBar></NavBar>
-        <div className = 'h-screen w-screen'></div>
+        <div className = 'h-[95vh] w-screen'></div>
     </>
     )
 }

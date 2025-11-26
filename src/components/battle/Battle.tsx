@@ -1,11 +1,11 @@
-import NavBar from "../containers/NavBar/NavBar"
-
-export default function Battle(){
-    //mode selection, make campaign first
-    return (
-    <>
-        <NavBar></NavBar>
-        <div className = 'h-[95vh] w-screen'></div>
-    </>
+import { useState } from "react"
+export default function Battle(props: any){
+    const [turn, setTurn] = useState(0);
+    const [hp, setHp] = useState(props.maxHp);
+    return(
+        <>
+            <div className='h-screen w-screen bg-[url(../../../vite.svg)] bg-contain bg-no-repeat bg-center'>{/*Enemy*/}
+            </div>
+        </>
     )
 }

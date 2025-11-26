@@ -5,14 +5,14 @@ export default function Homepage(){
     <>
         <div className='h-screen w-lvw bg-[url(../../../vite.svg)] bg-contain bg-no-repeat bg-center'>{/*Background/Introductory picture*/}
             <div className='flex flex-col justify-center h-screen'>
-                <div className='m-[1vh]'>
-                    <a href='/battle' className='flex-1 m-[1vh]'>Battle</a>
+                <div className='m-[2vh]'>
+                    <a href='/battle'>Battle</a>
                 </div>
-                <div className='m-[1vh]'>
-                    <a href='/collection' className='flex-1 m-[1vh]'>Collection</a>
+                <div className='m-[2vh]'>
+                    <a href='/collection'>Collection</a>
                 </div>
-                <div className='m-[1vh]'>
-                    <a href='/instructions' className='flex-1 m-[1vh]'>How to Play</a>
+                <div className='m-[2vh]'>
+                    <a href='/instructions'>How to Play</a>
                 </div>
             </div>
         </div>

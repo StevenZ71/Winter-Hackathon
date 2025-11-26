@@ -1,4 +1,4 @@
-import NavBar from "../containers/NavBar/NavBar"
+import NavBar from '../containers/NavBar/NavBar'
 
 export default function Collection(){
     //two sections, card collection with deck creation, character selection and

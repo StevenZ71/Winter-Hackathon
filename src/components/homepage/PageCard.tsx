@@ -1,7 +1,10 @@
-export default function PageCard(){
+export default function PageCard(props){
     return (
     <>
-        <div className="flex-1">Huh</div>
+        <div className = 'flex-1 place-items-center mx-[10vw] my-[10vh] relative'>
+            <img src = {props.image} />
+            <div className = 'absolute bottom-0'>{props.text}</div>
+        </div>
     </>
     )
 }

@@ -2,18 +2,17 @@
 //Tailwind - vw vh (viewwidth viewheight) c
 //5vw is 5% of viewwidth of screen
 //em
-export default function PlayerCard(){
-    //
+
+export default function CharacterCard(props: any){
     return (
-    <>
-        <div className="w-[5vw]"> 
-            <img className="card-img-top" src="..." alt="Card image cap"/>
-            <div className="card-body">
-                <h5 className="card-title">Ivan</h5>
-                <p className="card-text">He has so much health cuz he is so fat</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+        <>
+            <div className="bg-amber-600 w-[35vw] h-[85vh] m-[5vh]"> 
+                <img className="" src="../../../assets/react.svg" alt="Character Image"/>
+                <div className="">
+                    <h5 className="">Character Title</h5>
+                    <p className="">Character Text</p>
+                </div>
             </div>
-        </div>
-    </>
-    )
+        </>
+        )
 }

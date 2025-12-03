@@ -1,12 +1,14 @@
 import NavBar from '../containers/NavBar/NavBar'
-import Card from './Card'
+import CharacterCarousel from './CharacterCarousel'
+import CharacterPage from './CharacterPage'
 
 export default function Collection(){
-    //two sections, card collection with deck creation, character selection and
+    //two sections, card collection with deck creation, character selection and 
     return (
     <>
         <NavBar></NavBar>
-        <Card cardName="ABC"/>
+        <CharacterPage> </CharacterPage>
+        <CharacterCarousel></CharacterCarousel>
     </>
     )
 }

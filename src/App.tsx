@@ -6,8 +6,36 @@ import Campaign from './components/battle/Campaign'
 import Battle from './components/battle/Battle'
 import Instructions from './components/instructions/Instructions'
 import './App.css'
+import { getCharacters } from './functions/localStorage';
+import { useEffect } from 'react'
 
 function App() {
+  const characters = [
+    {
+      name: "Calculus Cat", description: "Your average wizard cat", maxHp: 10, manaRegen: 3, cardSpeed: 30
+    }
+  ];
+  useEffect(() =>{
+    defaultState();
+  },[]);
+  const defaultState = () => {
+    // if(localStorage.getItem("Character")==null){
+      localStorage.setItem("Character",JSON.stringify({name: "Calculus Cat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 30, unlocked: true}));
+    // }
+    // if(localStorage.getItem("Currency")==null){
+      localStorage.setItem("Currency", "0");
+    // }
+    // if(localStorage.getItem("Characters")==null){
+      localStorage.setItem("Characters",JSON.stringify(
+        characters.map(character => {
+          return {
+            name: character.name, level: 1, levelPoints: 0, maxHp: character.maxHp, manaRegen: character.manaRegen, cardSpeed: character.cardSpeed, unlocked: false
+          };
+        })
+      ));
+      getCharacters()[0].unlocked = true;
+    // }
+  }
   return (
     <>
       <BrowserRouter>

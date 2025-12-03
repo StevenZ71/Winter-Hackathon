@@ -5,8 +5,7 @@ export default function CardPage(){
     //card page that shows all the existing cards in one page
     return (
     <>
-        <NavBar></NavBar>
-        
+        <Card></Card>
     </>
     )
 }

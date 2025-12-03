@@ -8,7 +8,7 @@
 export default function Card(props: any){
     return (
     <>
-        <div className="bg-red-600 w-[10vw] h-[20vh] m-[2vw]">
+        <div className="bg-red-600 w-[10vw] h-[25vh] m-[4vw]">
             Name:
         </div>
     </>

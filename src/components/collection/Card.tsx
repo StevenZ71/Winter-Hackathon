@@ -2,13 +2,14 @@
 //vh
 //vwh 
 //em for text
+//make the shape of the card
 
 
-export default function Card(props){
+export default function Card(props: any){
     return (
     <>
-        <div className="bg-amber-300">
-            {props.cardName}
+        <div className="bg-red-600 w-[10vw] h-[25vh] m-[4vw]">
+            Name:
         </div>
     </>
     )

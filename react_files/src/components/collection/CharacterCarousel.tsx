@@ -1,6 +1,6 @@
-import { Carousel } from 'flowbite';
+// import { Carousel } from 'flowbite';
 
-const default-carousel = new Carousel(carouselElement, items, options, instanceOptions);
+// const default-carousel = new Carousel(carouselElement, items, options, instanceOptions);
 
 export default function CharacterCarousel(props: any){
     return (

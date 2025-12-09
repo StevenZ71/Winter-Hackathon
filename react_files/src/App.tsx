@@ -31,7 +31,7 @@ function App() {
   }
   const defaultState = () => {
     // if(localStorage.getItem("Character")==null){
-      localStorage.setItem("Character",JSON.stringify({name: "Testing Cat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 3, unlocked: true}));
+      localStorage.setItem("Character",JSON.stringify({name: "Testing Cat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 300, unlocked: true}));
     // }
     // if(localStorage.getItem("Currency")==null){
       localStorage.setItem("Currency", "0");

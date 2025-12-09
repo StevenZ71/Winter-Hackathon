@@ -7,7 +7,7 @@ export default function Battle(props: any){
     const [cards, setCards] = useState([]);
     const [currentCard, setCurrentCard] = useState(null);
     const [mana, setMana] = useState(0);
-    const [tick, setTick] = useState(0);
+    const [tick, setTick] = useState(300);
     const [enemyHp, setEnemyHp] = useState(props.enemyMaxHp);
     const [enemyMana, setEnemyMana] = useState(props.enemyMana);
     useEffect(() => {

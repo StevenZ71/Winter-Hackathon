@@ -39,7 +39,7 @@ export default function BattleCard(props: any){
             style={{transform: hover&&!back&&!running ? `translate(42.5vw,20vh) scale(2) rotate(0deg)` : `translate(${props.index*10 + 35}vw,60vh) rotate(${props.index*3}deg)`, zIndex: hover&&!back&&!running ? '1': '0', animationFillMode: 'forwards', animationName: running ? 'hoverBattleCard' : '', animationDuration: '1s', animationDirection: hover ? 'normal' : 'reverse'}}
             >
                 {props.card.topic}
-                <img src = {`../../../images/${props.card.topic}.jpg`} />
+                <img src = {`../../../images/${props.card.topic}.png`} />
             </div>
         </>
     )

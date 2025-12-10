@@ -21,7 +21,7 @@ export default function Card(props: any) {
                 >
                     {props.card.topic || "Card Title"}
                 </h3>
-                <img src=""/>
+                <img src = {`../../../images/${props.card.topic}.png`} />
                 {/* <div
                     //scalable image placeholder dimensions
                     style={{ height: imageSize, width: imageSize }}

@@ -45,6 +45,15 @@ const MiniCharacterCard = ({ character, isActive, onSelect }: MiniCharacterCardP
                     {getCharactersInfo().find(element => character.name==element.name).description}
                 </p>
             </div>
+            <div className="text-white w-full h-1/2 text-center overflow-hidden flex flex-col justify-center text-sm">
+            <p>
+                Health: {character.maxHp}
+                <br />
+                Mana Regen: {character.manaRegen}
+                <br />
+                Card Drawing Speed: {character.cardSpeed}
+            </p>
+            </div>
         </div>
     );
 };

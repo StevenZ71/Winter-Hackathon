@@ -13,7 +13,7 @@ export default function Collection(){
     return (
     <>
         <NavBar></NavBar>
-        <button onClick={click}>{cardPage ? 'Character Select' : 'Card Select'}</button>
+        <button className="bg-green-500 w-screen" onClick={click}>{cardPage ? 'Character Select' : 'Card Select'}</button>
         {cardPage ? <CardPage></CardPage> :
         <><CharacterPage> </CharacterPage>
         </>

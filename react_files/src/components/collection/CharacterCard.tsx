@@ -9,7 +9,7 @@ export default function CharacterCard(props: any){
     return (
         <>
             <div className="bg-amber-600 w-[35vw] h-[85vh] m-[5vh]"> 
-                <img className="" src={`../../../images/${getCharacter().name}.png`} alt="Character Image"/>
+                <img className="" src="../../../assets/react.svg" alt="Character Image"/>
                 <div className="">
                     <h5 className="">{getCharacter().name}</h5>
                     <p className="">{getCharactersInfo().find(character => character.name==getCharacter().name).description}</p>

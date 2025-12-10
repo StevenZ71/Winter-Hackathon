@@ -15,9 +15,7 @@ export default function Collection(){
         <NavBar></NavBar>
         <button onClick={click}>{cardPage ? 'Character Select' : 'Card Select'}</button>
         {cardPage ? <CardPage></CardPage> :
-        <>
-            <CharacterPage> </CharacterPage>
-            <CharacterCarousel></CharacterCarousel>
+        <><CharacterPage> </CharacterPage>
         </>
         }
     </>

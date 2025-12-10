@@ -19,7 +19,7 @@ export default function Card(props: any) {
                     //scalable text using 'em' units
                     className="text-[1.4em] leading-[1.2em] font-bold text-center mb-[1vh]"
                 >
-                    {props.title || "Card Title"}
+                    {props.card.topic || "Card Title"}
                 </h3>
                 <div
                     //scalable image placeholder dimensions

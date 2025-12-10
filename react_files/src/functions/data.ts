@@ -1,4 +1,4 @@
-import type { character, card } from '../type.ts';
+import type { character, card, cardInfo } from '../type.ts';
 
 export function setStage(stage : number){
     localStorage.setItem("Stage", stage.toString());
@@ -27,7 +27,7 @@ export function getCharactersInfo(){
             {name: "BagCat", description: "This cat raised it's health stat in fear of harm", maxHp: 15, manaRegen: 2, cardSpeed: 45}
         ];
 }
-export function getCardsInfo(){
+export function getCardsInfo() : cardInfo[]{
     return [
         {topic: "Limits", effectMultiplier: 1, manaUsage: 10},
         {topic: "Power Rule", effectMultiplier: 1.2, manaUsage: 12},

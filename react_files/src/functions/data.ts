@@ -23,8 +23,8 @@ export function getStage() : number{
 }
 export function getCharactersInfo(){
     return [
-            {name: "Calculus Cat", description: "Your average wizard cat", maxHp: 10, manaRegen: 3, cardSpeed: 30},
-            {name: "", description: "This cat raised it's health stat in fear of harm", maxHp: 15, manaRegen: 2, cardSpeed: 45}
+            {name: "HatCat", description: "Your average wizard cat", maxHp: 10, manaRegen: 3, cardSpeed: 30},
+            {name: "BagCat", description: "This cat raised it's health stat in fear of harm", maxHp: 15, manaRegen: 2, cardSpeed: 45}
         ];
 }
 export function getCardsInfo(){

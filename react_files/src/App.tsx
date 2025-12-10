@@ -7,6 +7,7 @@ import Instructions from './components/instructions/Instructions'
 import './App.css'
 import { getCardsInfo, getCharacters, getCharactersInfo, setStage } from './functions/data';
 import { useEffect } from 'react'
+import Endless from './components/battle/Endless'
 
 function App() {
   const charactersInfo = getCharactersInfo();
@@ -24,13 +25,10 @@ function App() {
     });
   }
   const defaultState = () => {
-    // if(localStorage.getItem("Character")==null){
-      localStorage.setItem("Character",JSON.stringify({name: "Testing Cat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 10, unlocked: true}));
-    // }
-    // if(localStorage.getItem("Currency")==null){
+    if(localStorage.getItem("Currency")==null){
       localStorage.setItem("Currency", "0");
-    // }
-    // if(localStorage.getItem("Characters")==null){
+    }
+    if(localStorage.getItem("Characters")==null){
       localStorage.setItem("Characters",JSON.stringify(
         charactersInfo.map(character => {
           return {
@@ -42,7 +40,10 @@ function App() {
         defaultDeck()
       ));
       getCharacters()[0].unlocked = true;
-    // }
+    }
+    if(localStorage.getItem("Character")==null){
+      localStorage.setItem("Character",JSON.stringify(getCharacters()[0]));
+    }
     setStage(1);
   }
   return (
@@ -54,6 +55,7 @@ function App() {
               <Route path='/battleSelect' element={<BattleSelect />}></Route>
               <Route path='/campaign' element={<Campaign/ >}></Route>
               <Route path='/instructions' element={<Instructions />}></Route>
+              <Route path='/endless' element={<Endless />}></Route>
           </Routes>
       </BrowserRouter>
     </>

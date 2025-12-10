@@ -111,7 +111,7 @@ export default function Battle(props: any){
    
     return(
         <>
-            <div className='h-screen w-screen bg-[url(../../../vite.svg)] bg-contain bg-no-repeat bg-center'>{/*Enemy*/}
+            <div className={`h-screen w-screen bg-[url(../../../images/${props.enemy.name}.png)] bg-contain bg-no-repeat bg-center`}>
                 hp: {truncate(hp)}
                 <br />
                 mana: {truncate(mana)}

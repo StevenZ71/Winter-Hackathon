@@ -9,7 +9,7 @@ export default function Campaign(){
     const [selected, setSelected] = useState(getStage());
     const getEnemy = () =>{
         // if(stage==0){
-            return {name: "Calculus Cat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 10, unlocked: false};
+            return {name: "HatCat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 10, unlocked: false};
         // }
     }
     const getCard = () =>{
@@ -33,7 +33,7 @@ export default function Campaign(){
         setBattling(true);
     }
     let list = [];
-    for(let i = 1; i < getCardsInfo().length-1; i++){
+    for(let i = 1; i < getCardsInfo().length; i++){
         list.push(i);
     }
     return(

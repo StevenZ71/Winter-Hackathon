@@ -5,7 +5,7 @@ export default function CardPage(){
     //card page that shows all the existing cards in one page
     return (
     <>
-        <div>
+        <div className='flex'>
         {getCardsInfo().map((card,key) => <Card card={card} key={key} />)}
         </div>
     </>

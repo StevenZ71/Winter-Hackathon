@@ -33,5 +33,7 @@ export type cardInfo = {
 }
 
 export type question = {
+    topic: string;
+    difficulty: number;
     name: string;
 }

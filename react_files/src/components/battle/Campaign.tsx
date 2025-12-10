@@ -1,16 +1,14 @@
 import { useState } from "react"
 import NavBar from "../containers/NavBar/NavBar"
 import Battle from "./Battle";
-import { getCardsInfo, getCurrency, getStage, setCurrency, setStage } from "../../functions/data";
+import { getCardsInfo, getCharacter, getCharacters, getCurrency, getStage, setCurrency, setStage } from "../../functions/data";
 import { generateCard } from "../../functions/util";
 import CampaignCard from "./CampaignCard";
 export default function Campaign(){
     const [battling, setBattling] = useState(false);
     const [selected, setSelected] = useState(getStage());
     const getEnemy = () =>{
-        // if(stage==0){
-            return {name: "HatCat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 10, unlocked: false};
-        // }
+        return getCharacters()[selected-1];
     }
     const getCard = () =>{
         return generateCard(getCardsInfo()[selected]);

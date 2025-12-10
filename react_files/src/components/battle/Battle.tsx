@@ -9,10 +9,10 @@ export default function Battle(props: any){
     const [cards, setCards] = useState<card[]>([]);
     const [currentCard, setCurrentCard] = useState(null);
     const [mana, setMana] = useState(50);
-    const [tick, setTick] = useState(10);
+    const [tick, setTick] = useState(getCharacter().cardSpeed);
     const [enemyHp, setEnemyHp] = useState(props.enemy.maxHp);
     const [enemyMana, setEnemyMana] = useState(50);
-    const [enemyTick, setEnemyTick] = useState(0);
+    const [enemyTick, setEnemyTick] = useState(props.enemy.cardSpeed);
     const [lastFrame, setLastFrame] = useState(Date.now());
     const [deltaTime, setDeltaTime] = useState(0);
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function Battle(props: any){
         let temp = cards;
         while(currentTick > getCharacter().cardSpeed){
           currentTick-=getCharacter().cardSpeed;
-          let card = getDeck()[randomInt(7)]; //just for now
+          let card = getDeck()[randomInt(7)];
           card.question = generateQuestion(card);
           temp.push(card);
         }
@@ -59,7 +59,13 @@ export default function Battle(props: any){
       let response = prompt('Solve the question provided. ' + cardPlayed.question.name);
       if(response!=null){
         let answer = solveQuestion(cardPlayed.question);
-        const success = math.compare(truncate(response),truncate(answer))==0;//placeholder
+        let success;
+        if(answer.includes('x')){
+          success = math.symbolicEqual(math.parse(response),math.parse(answer));
+        } 
+        else{
+          success = math.compare(truncate(response),truncate(answer))==0;//placeholder
+        }
         cardResult(cardPlayed, success);
       }
     }
@@ -113,7 +119,8 @@ export default function Battle(props: any){
    
     return(
         <>
-            <div className={`h-screen w-screen bg-[url(../../../images/${props.enemy.name}.png)] bg-contain bg-no-repeat bg-center`}>
+            <div style={{ backgroundImage: `url(/images/${props.enemy.name}.png)`}}
+            className={`h-screen w-screen bg-[url('../../../images/${props.enemy.name}.png')] bg-contain bg-no-repeat bg-center`}>
                 hp: {truncate(hp)}
                 <br />
                 mana: {truncate(mana)}

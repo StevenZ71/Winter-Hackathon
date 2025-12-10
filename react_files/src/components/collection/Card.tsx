@@ -7,13 +7,15 @@
 
 export default function Card(props: any) {
     const imageSize = '7vh';
-    
+    const select = () =>{
+        props.select(props.card, props.index);
+    }
     return (
         <>
-            <div
-                className="bg-red-600 w-[12vw] h-[30vh] m-[2vw] 
+            <div onClick={select}
+                className={`${props.card.effect=="damage" ? 'bg-red-600' : 'bg-blue-500'} w-[12vw] h-[30vh] m-[2vw] 
                            flex flex-col items-center p-[1vw] 
-                           rounded-xl shadow-2xl text-white"
+                           rounded-xl shadow-2xl text-white`}
             >
                 <h3 
                     //scalable text using 'em' units

@@ -9,7 +9,7 @@ export default function Endless(){
     const navigate = useNavigate();
     const getEnemy = () =>{
         // if(stage==0){
-            return {name: "HatCat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 10, unlocked: false};
+            return {name: "HatCat", level: 1, levelPoints: 0, maxHp: 10, manaRegen: 3, cardSpeed: 30, unlocked: false};
         // }
     }
     const getCard = () =>{

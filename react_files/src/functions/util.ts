@@ -5,8 +5,6 @@ import * as math from "mathjs";
 export function manaUsage(cardPlayed : card) : number{
     return cardPlayed.manaUsage * Math.pow(1.1,cardPlayed.difficulty-1);
 }
-
-
 export function randomInt(max : number) : number{
     return parseInt((Math.random() * max).toString());
 }
@@ -71,11 +69,9 @@ export function generateQuestion(cardPlayed : card) : question{
         }
         equation = 'lim x-> ' + randomIntRange(-10,10) + ' of f(x) = ' + equation;
         // console.log(math.evaluate('2*+2*x^1',{x:-52}));
-        console.log(equation);
-        
     }
     else if(cardPlayed.topic=='Power Rule'){
-        equation = 'Find the derivative of ' + generateExpression(difficulty*3);
+        equation = 'Find the derivative of ' + generateExpression(cardPlayed.difficulty*3);
     }
     else if(cardPlayed.topic=='Product Rule'){
         equation = 'Find the derivative of ' + encloseInParentheses(generateExpression()) + encloseInParentheses(generateExpression());
@@ -89,9 +85,10 @@ export function generateQuestion(cardPlayed : card) : question{
         equation = 'Find the derivative of ' + encloseInParentheses(generateExpression(cardPlayed.difficulty*2)) + '/' + encloseInParentheses(generateExpression(cardPlayed.difficulty*2));
     }
     else if(cardPlayed.topic=='Chain Rule'){
-        equation = 'Find the derivative of ' + encloseInParentheses(generateExpression(cardPlayed.difficulty*2)) + '^' + randomIntRange(-3,3);
+        equation = 'Find the derivative of ' + encloseInParentheses(generateExpression(cardPlayed.difficulty*2)) + '^' + (randomInt(1) > 0 ? randomIntRange(-3,-2) : randomIntRange(2,3));
     }
     question = {...question, name: equation};
+    console.log(equation);
     console.log(solveQuestion(question));
     return question;
 }
@@ -103,7 +100,7 @@ export function solveQuestion(question : question) : string{
         answer = math.evaluate(math.simplify(answer).toString(),{x : c});
     }
     else if(question.topic=='Power Rule' || question.topic=='Product Rule' || question.topic=='Quotient Rule' || question.topic=='Chain Rule'){
-        answer = math.derivative(math.simplify(answer.substring(answer.indexOf('of' +2))).toString(),'x').toString();
+        answer = math.derivative(math.simplify(answer.substring(answer.indexOf('of') + 3)).toString(),'x').toString();
     }
     return answer;
 }

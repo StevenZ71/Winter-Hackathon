@@ -28,7 +28,7 @@ function App() {
     if(localStorage.getItem("Currency")==null){
       localStorage.setItem("Currency", "0");
     }
-    if(localStorage.getItem("Characters")==null){
+    // if(localStorage.getItem("Characters")==null){
       localStorage.setItem("Characters",JSON.stringify(
         charactersInfo.map(character => {
           return {
@@ -40,10 +40,10 @@ function App() {
         defaultDeck()
       ));
       getCharacters()[0].unlocked = true;
-    }
-    if(localStorage.getItem("Character")==null){
+    // }
+    // if(localStorage.getItem("Character")==null){
       localStorage.setItem("Character",JSON.stringify(getCharacters()[0]));
-    }
+    // }
     setStage(1);
   }
   return (

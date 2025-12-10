@@ -16,7 +16,7 @@ export default function Collection(){
         <button onClick={click}>{cardPage ? 'Character Select' : 'Card Select'}</button>
         {cardPage ? <CardPage></CardPage> :
         <><CharacterPage> </CharacterPage>
-        <CharacterCarousel></CharacterCarousel></>
+        </>
         }
     </>
     )

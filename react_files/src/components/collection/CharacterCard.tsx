@@ -6,7 +6,7 @@
 export default function CharacterCard(props: any){
     return (
         <>
-            <div className="bg-amber-600 w-[35vw] h-[85vh] m-[5vh]"> 
+            <div className="absolute bg-amber-600 w-[35vw] h-[85vh] m-[5vh]"> 
                 <img className="" src="../../../assets/react.svg" alt="Character Image"/>
                 <div className="">
                     <h5 className="">Character Title</h5>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import type { character } from '../../type';
+import { getCharacters, getCharactersInfo } from '../../functions/data';
 
 interface Character {
     title: string;
@@ -7,7 +9,7 @@ interface Character {
 }
 
 interface MiniCharacterCardProps {
-    character: Character; 
+    character: character; 
     isActive: boolean;
     onSelect: () => void; 
 }
@@ -30,24 +32,24 @@ const MiniCharacterCard = ({ character, isActive, onSelect }: MiniCharacterCardP
             onClick={onSelect}
         >
             <div className="w-full h-1/2 bg-yellow-400 flex items-center justify-center rounded-sm mb-1 border-b-2 border-amber-900">
-                <img src={character.imageUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23555' d='M21 16H3V4h18m0-2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3h8l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E"} 
-                    alt={character.title}
+                <img src={`/images/${character.name}.png`}// || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23555' d='M21 16H3V4h18m0-2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3h8l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E"} 
+                    alt={character.name}
                     className="max-w-full max-h-full object-contain p-1"
                 />
             </div>
             <div className="text-white w-full h-1/2 text-center overflow-hidden flex flex-col justify-center">
                 <h5 className="font-extrabold uppercase text-lg sm:text-xl leading-snug tracking-wider">
-                    {character.title}
+                    {character.name}
                 </h5>
                 <p className="italic text-xs sm:text-sm leading-tight text-amber-100 mt-0.5">
-                    {character.text}
+                    {getCharactersInfo().find(element => character.name==element.name).description}
                 </p>
             </div>
         </div>
     );
 };
 
-export default function CharacterCarousel() {
+export default function CharacterCarousel(props: any) {
     const characterData: Character[] = [ 
         { title: "Fire Mage", text: "Master of incineration.", imageUrl: "" },
         { title: "Ice Paladin", text: "Guardian of the frozen oath.", imageUrl: "" },
@@ -58,18 +60,31 @@ export default function CharacterCarousel() {
     ];
 
     const [activeIndex, setActiveIndex] = useState(2); 
-    const totalCards = characterData.length;
+    const totalCards = getCharacters().length;
 
     const handleNext = () => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % totalCards);
+        if(activeIndex+1 >= totalCards){
+            handleSelect(0);
+        }
+        else{
+            handleSelect(activeIndex+1);
+        }
     };
 
     const handlePrev = () => {
         setActiveIndex((prevIndex) => (prevIndex - 1 + totalCards) % totalCards);
+        if(activeIndex-1 < 0){
+            handleSelect(totalCards-1);
+        }
+        else{
+            handleSelect(activeIndex-1);
+        }
     };
     
     const handleSelect = (index: number) => {
         setActiveIndex(index);
+        props.select(index);
     }
 
     const itemWidth = 20; 
@@ -78,7 +93,7 @@ export default function CharacterCarousel() {
 
     return (
         <>
-        <div className="relative w-1/2 h-96 flex justify-center items-center overflow-hidden bg-gray-900 ml-auto mr-0">
+        <div className="relative w-screen h-96 flex justify-center items-center overflow-hidden bg-gray-900 ml-0 mr-0">
             
             <div 
                 className="flex transition-transform duration-500 ease-in-out h-full items-center absolute left-0"
@@ -87,7 +102,7 @@ export default function CharacterCarousel() {
                     width: `${totalCards * itemWidth}%` 
                 }}
             >
-                {characterData.map((character, index) => (
+                {getCharacters().map((character, index) => (
                     <div
                         key={index}
                         className={`

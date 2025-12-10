@@ -9,7 +9,7 @@ export default function Battle(props: any){
     const [cards, setCards] = useState<card[]>([]);
     const [currentCard, setCurrentCard] = useState(null);
     const [mana, setMana] = useState(50);
-    const [tick, setTick] = useState(getCharacter().cardSpeed);
+    const [tick, setTick] = useState(0);
     const [enemyHp, setEnemyHp] = useState(props.enemy.maxHp);
     const [enemyMana, setEnemyMana] = useState(50);
     const [enemyTick, setEnemyTick] = useState(props.enemy.cardSpeed);
@@ -60,7 +60,7 @@ export default function Battle(props: any){
       if(response!=null){
         let answer = solveQuestion(cardPlayed.question);
         let success;
-        if(answer.includes('x')){
+        if(answer.toString().includes('x')){
           success = math.symbolicEqual(math.parse(response),math.parse(answer));
         } 
         else{

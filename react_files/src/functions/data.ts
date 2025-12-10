@@ -27,6 +27,10 @@ export function setDeck(card : cardInfo, index : number, difficulty = 1){
     temp.push(newCard);
     localStorage.setItem("Deck",JSON.stringify(temp));
 }
+export function setCharacter(index : number){
+    localStorage.setItem("Character",JSON.stringify(getCharacters()[index]));
+    console.log(getCharacters()[index]);
+}
 export function convertToCard(card : cardInfo) : card{
     return {
         topic: card.topic, effect: "damage", difficulty: 1, effectMultiplier: card.effectMultiplier, manaUsage: card.manaUsage, question: null
